@@ -1,3 +1,19 @@
+.weather-app{
+    max-width: 600px;
+    margin:0 auto;
+    padding: 20px;
+    border:    1px solid #dadde1;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
 h1{
-    color:pink
+    color: #878787;
+    font-size: 24px;
+    font-weight: 100;
+    line-height: 28px;
+    margin-bottom : 0
 }
