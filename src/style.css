@@ -12,8 +12,9 @@ h1{
 ul{
     margin: 0;
     padding:0;
-}
-li {
+  }
+  li {
+  text-transform: capitalize;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -91,5 +92,8 @@ li {
   
   .weather-forecast-temperatures {
     font-size: 13px;
+  }
+
+  #description{
   }
   
