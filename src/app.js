@@ -1,5 +1,24 @@
-function formatDate() {
-  return 'Friday 05:00';
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let hour = date.getHours();
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
+  let days = [
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+  ];
+  let day = date.getDay();
+  return `${days[day]}  ${hour}:${minutes}`;
 }
 function displayTemperature(response) {
   console.log(response.data);
