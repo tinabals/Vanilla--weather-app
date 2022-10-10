@@ -90,3 +90,10 @@ li:first-letter {
 .weather-forecast-temperatures {
   font-size: 13px;
 }
+.weather-temperature .active{
+  cursor: default;
+  color:black;
+}
+.weather-temperature .active:hover{
+  text-decoration: none;
+}
