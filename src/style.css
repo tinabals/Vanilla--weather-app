@@ -1,8 +1,8 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
 }
 h1 {
-  color: #878787;
   font-size: 24px;
   font-weight: 100;
   line-height: 28px;
@@ -25,6 +25,10 @@ li {
 
 li:first-letter {
   text-transform: capitalize;
+}
+.weather-app{
+  background-image: url("./image/cld.webp");
+  
 }
 
 .links {
