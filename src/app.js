@@ -1,3 +1,4 @@
+// getting the date and time
 function formatDate(timestamp) {
   let date = new Date(timestamp);
   let minutes = date.getMinutes();
@@ -20,6 +21,8 @@ function formatDate(timestamp) {
   let day = date.getDay();
   return `${days[day]}  ${hour}:${minutes}`;
 }
+
+//Displaying the forecast function (multiple days)
 function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector('#forecast');
@@ -54,22 +57,22 @@ function displayForecast(response) {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-  console.log(forecastHTML);
 }
+
+//formatting day function
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
   let days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat'];
   return days[day];
 }
+
 function getForecast(coordinates) {
-  console.log(coordinates);
   let apiKey = '8c48afa47a9a9c24f3500c7039d50aaa';
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
-
+//Function that displays the temperature
 function displayTemperature(response) {
   let cityElement = document.querySelector('#city');
   let temperatureElement = document.querySelector('#temperature');
@@ -93,6 +96,8 @@ function displayTemperature(response) {
 
   getForecast(response.data.coord);
 }
+
+//The get weathe by city search function
 function search(city) {
   let apiKey = 'c6afaa2c3ad098fb65625db7f7ba5be4';
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -131,5 +136,3 @@ let celsius = document.querySelector('#celsius-link');
 celsius.addEventListener('click', getCelsiusTemp);
 
 search('New York');
-
-// displayForecast();
